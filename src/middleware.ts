@@ -1,0 +1,34 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+  const token = request.cookies.get("access_token")?.value;
+  
+  // Check if the request is for the /auth/signin page
+  const isSigninPage = request.nextUrl.pathname === '/signin';
+  
+  // If token exists and trying to access the signin page, redirect to another page
+  if (token && isSigninPage) {
+    return NextResponse.redirect(new URL("/", request.url)); // Redirect to homepage or another page
+  }
+  
+  // Check if token exists in cookies for other pages
+  if (!token) {
+    // If there is no token and the user is not trying to access /auth/signin
+    // redirect to /auth/signin for protected pages
+    if (!isSigninPage) {
+      return NextResponse.redirect(new URL("/signin", request.url));
+    }
+  }
+  
+  // For all other requests, just proceed
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: [
+    "/",
+    "/signin",
+    "/profile",
+  ],
+};
