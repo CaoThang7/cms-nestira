@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface ButtonProps {
-  type?: any;
+  type?: "button" | "submit" | "reset";
   children: ReactNode; // Button text or content
   size?: "sm" | "md"; // Button size
   variant?: "primary" | "outline"; // Button variant
@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  type,
+  type = "button",
   children,
   size = "md",
   variant = "primary",

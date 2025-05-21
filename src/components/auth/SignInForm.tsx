@@ -10,7 +10,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInFormValues, signInSchema } from "@/schemas/auth";
 // import { authService } from "@/services/auth";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,7 +31,28 @@ export default function SignInForm() {
   });
 
   const onSubmit: SubmitHandler<SignInFormValues> = async (data) => {
-    console.log(data);
+    try {
+      setIsSubmitting(true);
+      setError(null);
+
+      // Mock auth success
+      console.log("Authentication successful:", data);
+
+      // Navigate to dashboard after successful login
+      // router.push("/dashboard");
+
+      // You could also add a toast notification here
+      // toast.success("Successfully signed in!");
+    } catch (err) {
+      // Handle authentication errors
+      console.error("Authentication failed:", err);
+      setError("Invalid username or password. Please try again.");
+
+      // You could also add a toast notification here
+      // toast.error("Authentication failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
