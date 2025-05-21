@@ -4,7 +4,6 @@ import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
 import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,7 +15,6 @@ export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
 
   const {
     register,
@@ -39,7 +37,6 @@ export default function SignInForm() {
       console.log("Authentication successful:", data);
 
       // Navigate to dashboard after successful login
-      // router.push("/dashboard");
 
       // You could also add a toast notification here
       // toast.success("Successfully signed in!");
