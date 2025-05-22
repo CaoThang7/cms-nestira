@@ -1,15 +1,5 @@
 import type { NextConfig } from "next";
 
-const apiBase = process.env.NEXT_PUBLIC_API_NESTIRA;
-
-if (!apiBase || (!apiBase.startsWith("/") && !apiBase.startsWith("http"))) {
-  throw new Error(
-    "❌ Environment variable NEXT_PUBLIC_API_NESTIRA is invalid or undefined"
-  );
-}
-
-const cleanedApiBase = apiBase.replace(/\/+$/, "");
-
 const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
@@ -19,10 +9,17 @@ const nextConfig: NextConfig = {
     return config;
   },
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_NESTIRA;
+    
+    if (!apiUrl) {
+      console.warn('NEXT_PUBLIC_API_NESTIRA is not defined, skipping API rewrites');
+      return [];
+    }
+
     return [
       {
         source: "/api/:path*",
-        destination: `${cleanedApiBase}/:path*`,
+        destination: `${apiUrl}/:path*`,
       },
     ];
   },
