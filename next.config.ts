@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
+const apiBase = process.env.NEXT_PUBLIC_API_NESTIRA;
+
+if (!apiBase || (!apiBase.startsWith("/") && !apiBase.startsWith("http"))) {
+  throw new Error(
+    "❌ Environment variable NEXT_PUBLIC_API_NESTIRA is invalid or undefined"
+  );
+}
+
+const cleanedApiBase = apiBase.replace(/\/+$/, "");
+
 const nextConfig: NextConfig = {
-  /* config options here */
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -13,7 +22,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_API_NESTIRA}/:path*`,
+        destination: `${cleanedApiBase}/:path*`,
       },
     ];
   },
