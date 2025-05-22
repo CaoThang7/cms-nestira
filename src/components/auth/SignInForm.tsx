@@ -1,15 +1,15 @@
 "use client";
-import Input from "@/components/form/input/InputField";
+
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
-import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
-import Link from "next/link";
-import React, { useState } from "react";
+import Input from "@/components/form/input/InputField";
+import { SignInFormValues, signInSchema } from "@/schemas/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignInFormValues, signInSchema } from "@/schemas/auth";
-// import { authService } from "@/services/auth";
-// import { toast } from "react-hot-toast";
+import { EyeCloseIcon, EyeIcon } from "@/icons";
+import { login } from "@/services/auth";
 
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,30 +23,22 @@ export default function SignInForm() {
   } = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
-      username: "",
-      password: "",
+      username: "demo",
+      password: "demo",
     },
   });
 
   const onSubmit: SubmitHandler<SignInFormValues> = async (data) => {
+    setIsSubmitting(true);
+    setError(null);
+
     try {
-      setIsSubmitting(true);
-      setError(null);
-
-      // Mock auth success
-      console.log("Authentication successful:", data);
-
-      // Navigate to dashboard after successful login
-
-      // You could also add a toast notification here
-      // toast.success("Successfully signed in!");
-    } catch (err) {
-      // Handle authentication errors
-      console.error("Authentication failed:", err);
-      setError("Invalid username or password. Please try again.");
-
-      // You could also add a toast notification here
-      // toast.error("Authentication failed. Please try again.");
+      const dataRes = await login(data);
+      toast.success(dataRes.message || "Đăng nhập thành công!");
+      window.location.href = "/";
+    } catch (err: any) {
+      setError(err.message || "Lỗi không xác định");
+      toast.error(err.message || "Đăng nhập thất bại. Vui lòng thử lại.");
     } finally {
       setIsSubmitting(false);
     }
@@ -54,15 +46,7 @@ export default function SignInForm() {
 
   return (
     <div className="flex w-full flex-1 flex-col lg:w-1/2">
-      <div className="mx-auto mb-5 w-full max-w-md sm:pt-10">
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-        >
-          <ChevronLeftIcon />
-          Back to dashboard
-        </Link>
-      </div>
+      <div className="mx-auto mb-5 w-full max-w-md sm:pt-10"></div>
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
         <div>
           <div className="mb-5 sm:mb-8">
