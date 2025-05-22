@@ -10,10 +10,6 @@ const nextConfig: NextConfig = {
     return config;
   },
   async rewrites() {
-    if (!process.env.NEXT_PUBLIC_API_NESTIRA) {
-      throw new Error("❌ NEXT_PUBLIC_API_NESTIRA is not defined");
-    }
-
     return [
       {
         source: "/api/:path*",
