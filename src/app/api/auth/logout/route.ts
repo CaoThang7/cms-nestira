@@ -4,7 +4,7 @@ export async function POST() {
   const API_URL: any = process.env.NEXT_PUBLIC_API_NESTIRA;
   const API_KEY: any = process.env.SECURE_API_ACCESS_KEY;
 
-  const res = await fetch(`${API_URL}auth/logout`, {
+  const res = await fetch(`${API_URL}/auth/logout`, {
     method: "POST",
     headers: {
       "api-access-key": API_KEY,

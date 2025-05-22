@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
 
     const cookie = req.headers.get('cookie'); 
 
-    const backendRes = await fetch(`${API_URL}auth/me`, {
+    const backendRes = await fetch(`${API_URL}/auth/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
