@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
 
     const API_URL: any = process.env.NEXT_PUBLIC_API_NESTIRA;
     const API_KEY: any = process.env.SECURE_API_ACCESS_KEY;
-    console.log(API_URL)
 
     const backendRes = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
