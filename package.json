@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/interaction": "^6.1.15",
@@ -16,6 +18,9 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@hookform/resolvers": "^5.0.1",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/styled-engine-sc": "^7.1.0",
     "@react-jvectormap/core": "^1.0.4",
     "@react-jvectormap/world": "^1.1.2",
     "@tailwindcss/forms": "^0.5.9",
@@ -23,6 +28,7 @@
     "apexcharts": "^4.3.0",
     "autoprefixer": "^10.4.20",
     "flatpickr": "^4.6.13",
+    "mui-datatables": "^4.3.0",
     "next": "15.2.3",
     "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",
@@ -32,6 +38,8 @@
     "react-dropzone": "^14.3.5",
     "react-hook-form": "^7.56.4",
     "react-hot-toast": "^2.5.2",
+    "styled-components": "^6.1.18",
+    "sweetalert2": "^11.21.2",
     "swiper": "^11.2.0",
     "swr": "^2.3.3",
     "tailwind-merge": "^2.6.0",
@@ -40,6 +48,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
+    "@types/mui-datatables": "^4.3.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

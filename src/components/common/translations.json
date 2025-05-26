@@ -1,0 +1,14 @@
+{
+  "en": {
+    "labelNameCategory": "Name category",
+    "placeholderNameCategory": "Enter name",
+    "labelDescriptionCategory": "Description category",
+    "placeholderDescriptionCategory": "Enter description"
+  },
+  "vi": {
+    "labelNameCategory": "Tên loại sản phẩm",
+    "placeholderNameCategory": "Nhập tên",
+    "labelDescriptionCategory": "Mô tả loại sản phẩm",
+    "placeholderDescriptionCategory": "Nhập mô tả loại sản phẩm"
+  }
+}

@@ -11,9 +11,7 @@ import {
   GridIcon,
   HorizontaLDots,
   ListIcon,
-  PageIcon,
   PieChartIcon,
-  PlugInIcon,
   TableIcon,
   UserCircleIcon,
 } from "../icons/index";
@@ -37,6 +35,19 @@ const navItems: NavItem[] = [
     path: "/profile",
   },
   {
+    name: "Categories",
+    icon: <TableIcon />,
+    subItems: [
+      { name: "Create Category", path: "/create-category", pro: false },
+      { name: "Category List", path: "/list-for-category", pro: false },
+    ],
+  },
+  // {
+  //   name: "Products",
+  //   icon: <BoxCubeIcon />,
+  //   subItems: [{ name: "Product List", path: "/list-for-product", pro: false }],
+  // },
+  {
     icon: <CalenderIcon />,
     name: "Calendar",
     path: "/calendar",
@@ -45,19 +56,6 @@ const navItems: NavItem[] = [
     name: "Forms",
     icon: <ListIcon />,
     subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
   },
 ];
 
@@ -81,11 +79,6 @@ const othersItems: NavItem[] = [
       { name: "Images", path: "/images", pro: false },
       { name: "Videos", path: "/videos", pro: false },
     ],
-  },
-  {
-    icon: <PlugInIcon />,
-    name: "Authentication",
-    subItems: [{ name: "Sign In", path: "/signin", pro: false }],
   },
 ];
 
