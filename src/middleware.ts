@@ -30,5 +30,12 @@ export const config = {
     "/",
     "/signin",
     "/profile",
+    "/category",
+    "/category/:path*",
+    "/create-category",
+    "/update-category",
+    "/update-category/:path*",
+    "/list-for-category",
+    "/list-for-category/:path*",
   ],
 };
