@@ -37,5 +37,12 @@ export const config = {
     "/update-category/:path*",
     "/list-for-category",
     "/list-for-category/:path*",
+    "/product",
+    "/product/:path*",
+    "/create-product",
+    "/update-product",
+    "/update-product/:path*",
+    "/list-for-product",
+    "/list-for-product/:path*",
   ],
 };
