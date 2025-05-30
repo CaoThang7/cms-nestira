@@ -42,11 +42,14 @@ const navItems: NavItem[] = [
       { name: "Category List", path: "/list-for-category", pro: false },
     ],
   },
-  // {
-  //   name: "Products",
-  //   icon: <BoxCubeIcon />,
-  //   subItems: [{ name: "Product List", path: "/list-for-product", pro: false }],
-  // },
+  {
+    name: "Products",
+    icon: <BoxCubeIcon />,
+    subItems: [
+      { name: "Create Product", path: "/create-product", pro: false },
+      { name: "Product List", path: "/list-for-product", pro: false },
+    ],
+  },
   {
     icon: <CalenderIcon />,
     name: "Calendar",

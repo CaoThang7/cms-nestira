@@ -10,6 +10,7 @@ import Button from "@/components/ui/button/Button";
 import Input from "@/components/form/input/InputField";
 import translations from "@/components/common/translations.json";
 import TextAreaCustom from "@/components/form/input/TextAreaCustom";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import { useForm } from "react-hook-form";
 import { useUserInfo } from "@/hooks/useUserInfo";
@@ -84,21 +85,27 @@ const UpdateCategoryForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-6">
       <div className="space-y-6">
-        <div className="flex justify-end space-x-2">
-          {["en", "vi"].map((lang) => (
-            <button
-              key={lang}
-              type="button"
-              onClick={() => setActiveLang(lang as "en" | "vi")}
-              className={`rounded px-3 py-1 text-sm font-bold ${
-                activeLang === lang
-                  ? "bg-[#0370af] text-white"
-                  : "bg-gray-200 text-black dark:bg-gray-700 dark:text-white"
-              } hover:bg-opacity-90`}
-            >
-              {lang.toUpperCase()}
-            </button>
-          ))}
+        <div className="mb-4 flex justify-between">
+          <KeyboardBackspaceIcon
+            className="h-6 w-6 cursor-pointer dark:text-white"
+            onClick={() => router.back()}
+          />
+          <div className="flex justify-end space-x-2">
+            {["en", "vi"].map((lang) => (
+              <button
+                key={lang}
+                type="button"
+                onClick={() => setActiveLang(lang as "en" | "vi")}
+                className={`rounded px-3 py-1 text-sm font-bold ${
+                  activeLang === lang
+                    ? "bg-[#0370af] text-white"
+                    : "bg-gray-200 text-black dark:bg-gray-700 dark:text-white"
+                } hover:bg-opacity-90`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div>
