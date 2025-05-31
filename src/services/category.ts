@@ -22,6 +22,12 @@ export async function getAllCategory() {
   return dataCategory.data;
 }
 
+export async function getTrashCategory() {
+  const res = await fetch("/api/category/list-delete");
+  const dataCategory = await res.json();
+  return dataCategory.data;
+}
+
 export const getDetailCategory = async ([id, lang]: [string, Lang]) => {
   const res = await fetch(`/api/category/detail?id=${id}`, {
     headers: {
@@ -56,6 +62,34 @@ export async function deleteCategory(id: string) {
 
   if (!res.ok) {
     throw new Error(data.message || "Delete category fail!");
+  }
+
+  return data;
+}
+
+export async function restoreCategory(id: string) {
+  const res = await fetch(`/api/category/restore?id=${id}`, {
+    method: "PATCH",
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || "Restore category fail!");
+  }
+
+  return data;
+}
+
+export async function hardDeleteCategory(id: string) {
+  const res = await fetch(`/api/category/hard-delete?id=${id}`, {
+    method: "DELETE",
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || "Hard delete category fail!");
   }
 
   return data;

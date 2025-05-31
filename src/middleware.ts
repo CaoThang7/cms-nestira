@@ -44,5 +44,9 @@ export const config = {
     "/update-product/:path*",
     "/list-for-product",
     "/list-for-product/:path*",
+    "/trash-category",
+    "/trash-category/:path*",
+    "/trash-product",
+    "/trash-product/:path*",
   ],
 };
