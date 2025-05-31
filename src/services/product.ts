@@ -22,6 +22,12 @@ export async function getAllProduct() {
   return dataProduct.data;
 }
 
+export async function getTrashProduct() {
+  const res = await fetch("/api/product/list-delete");
+  const dataProduct = await res.json();
+  return dataProduct.data;
+}
+
 export const getDetailProduct = async ([id, lang]: [string, Lang]) => {
   const res = await fetch(`/api/product/detail?id=${id}`, {
     headers: {
@@ -56,6 +62,34 @@ export async function deleteProduct(id: string) {
 
   if (!res.ok) {
     throw new Error(data.message || "Delete product fail!");
+  }
+
+  return data;
+}
+
+export async function restoreProduct(id: string) {
+  const res = await fetch(`/api/product/restore?id=${id}`, {
+    method: "PATCH",
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || "Restore product fail!");
+  }
+
+  return data;
+}
+
+export async function hardDeleteProduct(id: string) {
+  const res = await fetch(`/api/product/hard-delete?id=${id}`, {
+    method: "DELETE",
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || "Hard delete product fail!");
   }
 
   return data;
