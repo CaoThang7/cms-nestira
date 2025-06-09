@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 import Lang from "@/types/lang";
 import Loader from "@/components/common/Loader";
@@ -21,12 +21,6 @@ const DetailProductComponent = ({ id }: Props) => {
     id ? [id, activeLang] : null,
     getDetailProduct,
   );
-
-  useEffect(() => {
-    if (data) {
-      console.log("Product Detail:", data);
-    }
-  }, [data]);
 
   if (isLoading) return <Loader />;
 

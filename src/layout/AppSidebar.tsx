@@ -12,6 +12,7 @@ import {
   TableIcon,
   UserCircleIcon,
   TrashIcon,
+  ListIcon,
 } from "../icons/index";
 
 type NavItem = {
@@ -46,6 +47,13 @@ const navItems: NavItem[] = [
     subItems: [
       { name: "Create Product", path: "/create-product", pro: false },
       { name: "Product List", path: "/list-for-product", pro: false },
+    ],
+  },
+  {
+    name: "Orders",
+    icon: <ListIcon />,
+    subItems: [
+      { name: "Order List", path: "/list-for-order", pro: false },
     ],
   },
 ];
