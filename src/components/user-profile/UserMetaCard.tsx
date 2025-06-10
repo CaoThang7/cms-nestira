@@ -16,7 +16,7 @@ export default function UserMetaCard() {
   };
   return (
     <>
-      <div className="rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800">
+      <div className="rounded-[2px] border border-gray-200 p-5 lg:p-6 dark:border-gray-800">
         <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
           <div className="flex w-full flex-col items-center gap-4 xl:flex-row">
             <div className="relative h-30 w-30 overflow-hidden rounded-full border border-gray-200 dark:border-gray-800">
