@@ -1,36 +1,25 @@
-import type { Metadata } from "next";
-import { EcommerceMetrics } from "@/components/ecommerce/EcommerceMetrics";
 import React from "react";
-import MonthlyTarget from "@/components/ecommerce/MonthlyTarget";
+import type { Metadata } from "next";
+import YearSalesChart from "@/components/ecommerce/YearSalesChart";
 import MonthlySalesChart from "@/components/ecommerce/MonthlySalesChart";
-import StatisticsChart from "@/components/ecommerce/StatisticsChart";
-import DemographicCard from "@/components/ecommerce/DemographicCard";
+import { EcommerceMetrics } from "@/components/ecommerce/EcommerceMetrics";
 
 export const metadata: Metadata = {
-  title:
-    "Nestira Admin | Home",
+  title: "Nestira Admin | Home",
   description: "This is Next.js Home for Nestira Admin Dashboard Template",
 };
 
 export default function Ecommerce() {
   return (
     <div className="grid grid-cols-12 gap-4 md:gap-6">
-      <div className="col-span-12 space-y-6 xl:col-span-7">
+      <div className="col-span-12 space-y-6">
         <EcommerceMetrics />
 
         <MonthlySalesChart />
       </div>
 
-      <div className="col-span-12 xl:col-span-5">
-        <MonthlyTarget />
-      </div>
-
       <div className="col-span-12">
-        <StatisticsChart />
-      </div>
-
-      <div className="col-span-12 xl:col-span-5">
-        <DemographicCard />
+        <YearSalesChart />
       </div>
     </div>
   );
