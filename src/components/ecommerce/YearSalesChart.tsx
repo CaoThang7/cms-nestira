@@ -111,7 +111,7 @@ const YearSalesChart = () => {
           gutterBottom
           sx={{ fontWeight: "bold", color: "#1976d2" }}
         >
-          Statistics for the year{data?.year}
+          Statistics for the year {data?.year}
         </Typography>
         <Typography
           variant="subtitle1"
