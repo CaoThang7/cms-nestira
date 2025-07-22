@@ -29,7 +29,12 @@
     "labelCategoryProductName": "Category name",
     "placeholderCategoryProductName": "Select category name",
     "labelImageProduct": "Image product",
-    "placeholderImageProduct": "Paste the image link and press Enter (Maximum 5 images)"
+    "placeholderImageProduct": "Paste the image link and press Enter (Maximum 5 images)",
+    "labelTitlePromotion": "Title promotion",
+    "placeholderTitlePromotion": "Enter title",
+    "labelContentPromotion": "Content promotion",
+    "labelThumbnailPromotion": "Thumbnail promotion",
+    "placeholderThumbnailPromotion": "Enter link Thumbnail"
   },
   "vi": {
     "labelNameCategory": "Tên loại sản phẩm",
@@ -61,6 +66,11 @@
     "labelCategoryProductName": "Tên loại sản phẩm",
     "placeholderCategoryProductName": "Chọn tên loại sản phẩm",
     "labelImageProduct": "Hình ảnh sản phẩm",
-    "placeholderImageProduct": "Dán link ảnh và nhấn Enter (Tối đa 5 ảnh)"
+    "placeholderImageProduct": "Dán link ảnh và nhấn Enter (Tối đa 5 ảnh)",
+    "labelTitlePromotion": "Tiêu đề khuyến mãi",
+    "placeholderTitlePromotion": "Nhập tiêu đề",
+    "labelContentPromotion": "Nội dung khuyến mãi",
+    "labelThumbnailPromotion": "Hình khuyễn mãi",
+    "placeholderThumbnailPromotion": "Nhập link hình"
   }
 }
