@@ -13,6 +13,7 @@ import {
   UserCircleIcon,
   TrashIcon,
   ListIcon,
+  ShootingStarIcon
 } from "../icons/index";
 
 type NavItem = {
@@ -54,6 +55,14 @@ const navItems: NavItem[] = [
     icon: <ListIcon />,
     subItems: [
       { name: "Order List", path: "/list-for-order", pro: false },
+    ],
+  },
+  {
+    name: "Promotions",
+    icon: <ShootingStarIcon />,
+    subItems: [
+      { name: "Create Promotion", path: "/create-promotion", pro: false },
+      { name: "Promotion List", path: "/list-for-promotion", pro: false },
     ],
   },
 ];

@@ -10,6 +10,7 @@ import {
   StrikethroughS,
   FormatSize,
 } from "@mui/icons-material";
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import { ToggleButton, ToggleButtonGroup, Menu, MenuItem } from "@mui/material";
 import { Editor } from "@tiptap/react";
 import { useState } from "react";
@@ -53,7 +54,6 @@ export default function MenuBar({ editor }: { editor: Editor | null }) {
     "31px",
     "32px",
   ];
-
 
   const Options = [
     {
@@ -117,6 +117,16 @@ export default function MenuBar({ editor }: { editor: Editor | null }) {
       icon: <Highlight className="size-4 text-black dark:text-white" />,
       onClick: () => editor.chain().focus().toggleHighlight().run(),
       selected: editor.isActive("highlight"),
+    },
+    {
+      icon: <AddPhotoAlternateIcon className="size-4 text-black dark:text-white" />,
+      onClick: () => {
+        const url = window.prompt("Paste your image URL:");
+        if (url && url.startsWith("http")) {
+          editor.chain().focus().setImage({ src: url }).run();
+        }
+      },
+      selected: false,
     },
   ];
 

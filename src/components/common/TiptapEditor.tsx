@@ -7,6 +7,7 @@ import TextStyle from "@tiptap/extension-text-style";
 import Highlight from "@tiptap/extension-highlight";
 import FontSize from "@tiptap/extension-font-size";
 import StarterKit from "@tiptap/starter-kit";
+import Image from "@tiptap/extension-image";
 import MenuBar from "./MenuBar";
 
 interface TiptapEditorProps {
@@ -41,6 +42,12 @@ const TiptapEditor = ({ value, onChange }: TiptapEditorProps) => {
       Highlight,
       TextStyle,
       FontSize,
+      Image.configure({
+        allowBase64: true,
+        HTMLAttributes: {
+          class: "my-4 mx-auto max-w-full h-auto",
+        },
+      }),
     ],
     content: value || "<p></p>",
     editorProps: {
